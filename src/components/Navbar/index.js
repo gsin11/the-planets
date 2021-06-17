@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Navbar = ({ data, isOpen, onClickHandler }) => {
   return (
-    <header className="flex p-6 justify-between shadow-md fixed w-full z-10 top-0 border-b border-gray-400 items-center">
-      <h1 className="flex items-center">
+    <header className="flex p-6 justify-between shadow-md w-full relative z-10 border-b border-gray-400 items-center md:flex-col">
+      <h1 className="flex items-center md:mb-6">
         <Link href="/">
           <a className="no-hover text-2xl">THE PLANET</a>
         </Link>
@@ -11,7 +11,7 @@ const Navbar = ({ data, isOpen, onClickHandler }) => {
       <div className="hidden md:block">
         {data.map((o) => (
           <Link key={o.id} href={`/planet/${o.slug}`}>
-            <a className="ml-4 uppercase">{o.name}</a>
+            <a className="ml-4 uppercase font-semibold">{o.name}</a>
           </Link>
         ))}
       </div>

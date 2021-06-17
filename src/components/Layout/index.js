@@ -8,10 +8,10 @@ const Layout = ({ title, menuItems, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="pt-20">
-      <div class="stars"></div>
-      <div class="twinkling"></div>
-      <div class="clouds"></div>
+    <>
+      <div className="stars"></div>
+      <div className="twinkling"></div>
+      <div className="clouds"></div>
       <Head>
         <title>The planet - {title || `platform for the universe`}</title>
         <meta name="description" content="planet information platform" />
@@ -27,7 +27,7 @@ const Layout = ({ title, menuItems, children }) => {
       />
       <Dropdown data={menuItems} isOpen={isOpen} />
       {children}
-    </div>
+    </>
   );
 };
 
