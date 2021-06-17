@@ -12,7 +12,7 @@ export default function Home({ items }) {
             <ActionItems />
           </section>
 
-          <div className="lg:grid lg:grid-flow-row lg:grid-cols-2 gap-24">
+          <div className="lg:grid lg:grid-flow-row lg:grid-cols-2 gap-24 order-2">
             <section className="mb-9 order-2 md:order-1">
               <div className="relative w-80 h-80 md:w-96 max-w-full md:h-96 mx-auto lg:top-16">
                 <Image
