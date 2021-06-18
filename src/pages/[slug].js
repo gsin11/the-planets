@@ -24,7 +24,7 @@ const categories = [
   },
 ];
 
-export default function Slug({ item }) {
+export default function Slug({ item, allItems }) {
   const [activeCategory, setActiveCategory] = useState(categories[0].slug);
 
   function changeCategory(slug) {
@@ -32,7 +32,7 @@ export default function Slug({ item }) {
   }
 
   return (
-    <Layout>
+    <Layout menuItems={allItems}>
       <main className="container md:w-11/12 lg:max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col justify-center items-center mt-6 lg:mt-12">
           <section className="w-full border-b border-gray-400 order-1 md:hidden">
@@ -138,8 +138,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const promise = getSingleMenuItem(params.slug);
+  const promise = getMenuItems();
+
   return promise.then((response) => {
-    return { props: { item: response.planets[0] } };
+    const singleItem = response.planets.filter(
+      (obj) => obj.slug === params.slug
+    );
+    return { props: { item: singleItem[0], allItems: response.planets } };
   });
 }
