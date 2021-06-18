@@ -32,7 +32,7 @@ export default function Slug({ item, allItems }) {
   }
 
   return (
-    <Layout menuItems={allItems}>
+    <Layout menuItems={allItems} title={item.name}>
       <main className="container md:w-11/12 lg:max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col justify-center items-center mt-6 lg:mt-12">
           <section className="w-full border-b border-gray-400 order-1 md:hidden">
