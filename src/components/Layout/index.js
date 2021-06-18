@@ -7,6 +7,11 @@ import Dropdown from "../Dropdown";
 const Layout = ({ title, menuItems, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const onClickHandler={() => {
+     window.scrollTo(0, 0);
+     setIsOpen(!isOpen);
+  }}
+
   return (
     <>
       <div className="stars"></div>
@@ -19,13 +24,10 @@ const Layout = ({ title, menuItems, children }) => {
       </Head>
       <Navbar
         data={menuItems}
-        onClickHandler={() => {
-          window.scrollTo(0, 0);
-          setIsOpen(!isOpen);
-        }}
+        onClickHandler={onClickHandler}
         isOpen={isOpen}
       />
-      <Dropdown data={menuItems} isOpen={isOpen} />
+      <Dropdown data={menuItems} isOpen={isOpen} onClickHandler={onClickHandler} />
       {children}
     </>
   );
