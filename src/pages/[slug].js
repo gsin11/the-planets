@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Image from "next/image";
+
+import PlanetImage from "@/components/PlanetImage";
 import Layout from "@/components/Layout";
 import ActionItems from "@/components/ActionItems";
-import { getMenuItems, getSingleMenuItem } from "@/lib/api";
+import { getMenuItems } from "@/lib/api";
 
 const categories = [
   {
@@ -45,14 +46,7 @@ export default function Slug({ item, allItems }) {
 
           <div className="lg:grid lg:grid-flow-row lg:grid-cols-2 gap-24 order-2">
             <section className="mb-9 order-2 md:order-1">
-              <div className="relative w-80 h-80 md:w-96 max-w-full md:h-96 mx-auto lg:top-16">
-                <Image
-                  src={`/static/images/${item.slug}-planet.png`}
-                  layout="fill"
-                  objectFit="cover"
-                  quality="100"
-                />
-              </div>
+              <PlanetImage slug={item.slug} activeCategory={activeCategory} />
             </section>
 
             <section className="mb-9 md:flex order-3 md:flex-row gap-10 lg:flex-col">

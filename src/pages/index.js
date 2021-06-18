@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Image from "next/image";
+
 import Layout from "@/components/Layout";
+import PlanetImage from "@/components/PlanetImage";
 import ActionItems from "@/components/ActionItems";
 import { getMenuItems } from "@/lib/api";
 
@@ -45,14 +46,10 @@ export default function Home({ items }) {
 
           <div className="lg:grid lg:grid-flow-row lg:grid-cols-2 gap-24 order-2">
             <section className="mb-9 order-2 md:order-1">
-              <div className="relative w-80 h-80 md:w-96 max-w-full md:h-96 mx-auto lg:top-16">
-                <Image
-                  src={`/static/images/${items[0].slug}-planet.png`}
-                  layout="fill"
-                  objectFit="cover"
-                  quality="100"
-                />
-              </div>
+              <PlanetImage
+                slug={items[0].slug}
+                activeCategory={activeCategory}
+              />
             </section>
 
             <section className="mb-9 md:flex order-3 md:flex-row gap-10 lg:flex-col">
@@ -79,6 +76,7 @@ export default function Home({ items }) {
               </div>
             </section>
           </div>
+
           <section className="w-full px-6 md:px-0 order-4 md:order-4">
             <ul className="w-full md:grid md:grid-flow-row md:grid-cols-4 md:gap-3">
               <li className="mb-2 md:mb-0">
