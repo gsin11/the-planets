@@ -10,7 +10,7 @@ const Navbar = ({ data, isOpen, onClickHandler }) => {
       </h1>
       <div className="hidden md:block">
         {data.map((o) => (
-          <Link key={o.id} href={`/planet/${o.slug}`}>
+          <Link key={o.id} href={`/${o.slug}`}>
             <a className="ml-4 uppercase font-semibold">{o.name}</a>
           </Link>
         ))}

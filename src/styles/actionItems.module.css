@@ -1,0 +1,18 @@
+.btn {
+  @apply uppercase md:p-4 md:border md:w-full md:flex;
+}
+
+.btn:hover,
+.active {
+  @apply md:border-transparent md:bg-purple-800;
+}
+
+.btn span:nth-child(1) {
+  @apply md:inline pr-4 text-center text-gray-500;
+}
+
+.btn:hover span:nth-child(2),
+.btn:hover span:nth-child(3),
+.activeText {
+  @apply text-white;
+}

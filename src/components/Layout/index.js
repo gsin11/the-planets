@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
+import { getMenuItems } from "@/lib/api";
 import Head from "next/head";
 import Navbar from "../Navbar";
 import Dropdown from "../Dropdown";
 
-const Layout = ({ title, menuItems, children }) => {
+const Layout = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    const promise = getMenuItems();
+    return promise.then((response) => {
+      setMenuItems(response.planets);
+    });
+  }, []);
 
   return (
     <>
