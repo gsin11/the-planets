@@ -7,10 +7,10 @@ import Dropdown from "../Dropdown";
 const Layout = ({ title, menuItems, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onClickHandler={() => {
+  const onClickHandler = () => {
      window.scrollTo(0, 0);
      setIsOpen(!isOpen);
-  }}
+  };
 
   return (
     <>
