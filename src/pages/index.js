@@ -18,7 +18,7 @@ const categories = [
   },
   {
     id: "03",
-    slug: "geology",
+    slug: "surface",
     primaryName: "geology",
     secondaryName: "surface",
   },
